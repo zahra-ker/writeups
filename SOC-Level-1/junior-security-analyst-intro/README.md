@@ -53,7 +53,7 @@ The SIEM dashboard shows several alerts. Two **Critical** alerts stand out at th
 
 Other alerts of lower severity are also present (failed logins, expired passwords), but the critical ones demand immediate attention.
 
-![SIEM Dashboard](images/siem-dashboard.jpg)
+<img src="images/siem-dashboard.png" width="75%">
 
 ### IP Hunter
 
@@ -66,19 +66,19 @@ Switching to the IP Hunter tab and looking up `221.181.185.159` confirms it is *
 | Country | China |
 | Categories | Port Scan, C2 Server, PlugX |
 
-![IP Hunter](images/ip-hunter.jpg)
+<img src="images/ip-hunter.png" width="75%">
 
 ### Escalation
 
 Since the IP is confirmed malicious and there was a successful SSH login, this needs to be escalated. Among the available staff, **Will Griffin** (SOC Team Lead) is the correct person to escalate to, as he is in charge of your team and handles complex cases.
 
-![Escalation](images/escalation.jpg)
+<img src="images/escalation.png" width="75%">
 
 ### Firewall Block
 
 After escalation, you block the malicious IP `221.181.185.159` on the firewall to stop the attack.
 
-![Firewall Block](images/firewall-block.jpg)
+<img src="images/firewall-block.png" width="75%">
 
 ### Answers
 
