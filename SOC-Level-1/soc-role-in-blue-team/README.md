@@ -106,8 +106,6 @@ The natural next step after L1 is to become a **SOC L2 Analyst**, though you can
 
 In this challenge, you play as the CISO of TrySecureMe, a big multinational company. Seven incidents are happening at once, and you need to drag and drop the right roles to handle each one.
 
-<img src="images/final-challenge.png" width="65%">
-
 The correct assignments are:
 
 | Incident | Assigned Role |
