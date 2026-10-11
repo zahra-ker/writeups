@@ -42,7 +42,7 @@ In bigger companies, the CISO oversees multiple security teams:
 
 ## Task 3 - Meet the Blue Team
 
-Blue Team focuses on defensive security — constantly monitoring for attacks and responding quickly. It can include 3 to 50 members depending on the company. The most common Blue Team departments are:
+Blue Team focuses on defensive security, constantly monitoring for attacks and responding quickly. It can include 3 to 50 members depending on the company. The most common Blue Team departments are:
 
 ### Security Operations Center (SOC)
 
@@ -80,7 +80,7 @@ Large companies may require narrow, specialized Blue Team roles:
 Starting as a SOC L1 analyst is a great way to broaden your cyber awareness. Steps to get started:
 
 1. Gain core SOC skills and practice them (red teaming or general IT helps too)
-2. Be proactive — try CTFs, stay in the loop of cyber news, consider the SAL1 certification
+2. Be proactive: try CTFs, stay in the loop of cyber news, consider the SAL1 certification
 3. Prepare for interviews, learn the difference between internal SOC and MSSP, and apply
 4. After working in a junior position, consider preparing and advancing to more senior roles
 
@@ -110,13 +110,13 @@ The correct assignments are:
 
 | Incident | Assigned Role |
 |----------|--------------|
-| SIEM alert about FW-NY-01 firewall brute-force — who should triage? | Lucas - SOC L1 Analyst |
-| HR manager Anna launched a phishing malware — who should make a deep analysis? | Susan - SOC L2 Analyst |
-| Ransomware hit the office in France — immediate response required | Robert - CERT Lead |
+| SIEM alert about FW-NY-01 firewall brute-force. Who should triage? | Lucas - SOC L1 Analyst |
+| HR manager Anna launched a phishing malware. Who should make a deep analysis? | Susan - SOC L2 Analyst |
+| Ransomware hit the office in France. Immediate response required | Robert - CERT Lead |
 | Credit card servers require PCI DSS audit | Nick - GRC Auditor |
 | Check tryhackme.thm for vulnerabilities | Ben - Penetration Tester |
-| SIEM unavailable due to storage limit — who can investigate? | Eugen - SOC Engineer |
-| FIN7 threat group actively targets the company — who can analyze their tactics? | Alice - Threat Researcher |
+| SIEM unavailable due to storage limit. Who can investigate? | Eugen - SOC Engineer |
+| FIN7 threat group actively targets the company. Who can analyze their tactics? | Alice - Threat Researcher |
 
 <img src="images/final-challenge-solved.png" width="65%">
 

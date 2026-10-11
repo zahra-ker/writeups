@@ -8,3 +8,4 @@ Writeups for the [SOC Level 1](https://tryhackme.com/path/outline/soclevel1) lea
 |---|------|------------|---------|
 | 1 | Junior Security Analyst Intro | Easy | [Link](junior-security-analyst-intro/) |
 | 2 | SOC Role in Blue Team | Easy | [Link](soc-role-in-blue-team/) |
+| 3 | Humans Attack Vectors | Easy | [Link](humans-attack-vectors/) |
