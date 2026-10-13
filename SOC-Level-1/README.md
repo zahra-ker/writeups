@@ -10,3 +10,4 @@ Writeups for the [SOC Level 1](https://tryhackme.com/path/outline/soclevel1) lea
 | 2 | SOC Role in Blue Team | Easy | [Link](soc-role-in-blue-team/) |
 | 3 | Humans Attack Vectors | Easy | [Link](humans-attack-vectors/) |
 | 4 | Systems Attack Vectors | Easy | [Link](systems-attack-vectors/) |
+| 5 | SOC L1 Alert Triage | Easy | [Link](soc-l1-alert-triage/) |
