@@ -15,3 +15,4 @@ Writeups for the [SOC Level 1](https://tryhackme.com/path/outline/soclevel1) lea
 | 7 | SOC Workbooks & Lookups | Easy | [Link](soc-workbooks-lookups/) |
 | 8 | SOC Metrics & Objectives | Easy | [Link](soc-metrics-objectives/) |
 | 9 | Introduction to EDRs | Easy | [Link](introduction-to-edrs/) |
+| 10 | Introduction to SIEM | Easy | [Link](introduction-to-siem/) |
