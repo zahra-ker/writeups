@@ -6,11 +6,11 @@
 
 ## Overview
 
-This room covers Endpoint Detection and Response (EDR) solutions, explaining how they differ from traditional antivirus software, their architecture, the types of telemetry they collect, and their detection and response capabilities. The room ends with a hands-on exercise where you investigate realistic alerts on an EDR dashboard.
+This room covers Endpoint Detection and Response (EDR) solutions: how they differ from traditional antivirus software, their architecture, the types of telemetry they collect, and their detection and response capabilities. It ends with a hands-on exercise investigating realistic alerts on an EDR dashboard.
 
 ## Task 1 - Introduction
 
-Endpoint Detection and Response (EDR) is a security solution designed to monitor, detect, and respond to advanced threats at the endpoint level. As a SOC analyst, it is essential to understand how EDR works since it is a widely adopted solution in organizations to protect their endpoints.
+Endpoint Detection and Response (EDR) is a security solution designed to monitor, detect, and respond to advanced threats at the endpoint level. Understanding how EDR works is essential for a SOC analyst, since it is a widely adopted solution for protecting endpoints.
 
 Learning objectives:
 
@@ -23,21 +23,21 @@ Learning objectives:
 
 ## Task 2 - What is an EDR?
 
-The increase in the use of digital devices is undeniable, and cyber threats are increasing day by day. To protect these devices, organizations implement several security measures, most of which are to protect the network. However, the fast adoption of Remote Work has exposed these devices as they are out of the perimeter protection deployed on the organization's network.
+The use of digital devices keeps growing, and cyber threats grow with it. To protect these devices, organizations implement several security measures, most of which focus on the network. The fast adoption of remote work, however, has exposed these devices, since they sit outside the perimeter protection deployed on the organization's network.
 
-EDR is a security solution that offers deep-level protection for endpoints. No matter where the endpoints are, the EDR will make sure they are monitored constantly and threats are detected. Some EDR solutions in the market include CrowdStrike Falcon, Symantec EDR, SentinelOne EDR, and Microsoft Defender for Endpoint.
+EDR is a security solution that offers deep-level protection for endpoints. No matter where the endpoints are, the EDR keeps them monitored constantly and detects threats. Some EDR solutions on the market include CrowdStrike Falcon, Symantec EDR, SentinelOne EDR, and Microsoft Defender for Endpoint.
 
 ### Features of EDR
 
-There are three main features of an EDR, which can also be referred to as the three pillars:
+An EDR has three main features, often referred to as the three pillars:
 
-- **Visibility**: The level of visibility EDR provides is impressive. It collects detailed data from the endpoints, including process modifications, registry modifications, file and folder modifications, user actions, and much more. It presents this information in a structured format to the analyst, who can see the whole process tree with a complete activity timeline. Any detections in the EDR land with a whole context.
+- **Visibility**: the level of visibility EDR provides is impressive. It collects detailed data from the endpoints, including process modifications, registry modifications, file and folder modifications, user actions, and much more. It presents this information in a structured format, showing the whole process tree with a complete activity timeline. Every detection lands with full context.
 
-- **Detection**: The detection feature wins over traditional detection capabilities. It incorporates signature-based as well as behavior-based detections, such as unexpected user activities. With modern machine learning capabilities, it identifies any deviation from the baseline behavior and instantly flags it. It can also detect fileless malware that resides in memory and allows feeding custom IOCs for threat detections.
+- **Detection**: the detection feature goes well beyond traditional capabilities. It incorporates both signature-based and behavior-based detections, such as unexpected user activities. With modern machine learning, it identifies any deviation from the baseline behavior and instantly flags it. It can also detect fileless malware that resides in memory, and allows feeding custom IOCs for threat detection.
 
-- **Response**: EDR empowers analysts to take action on detected threats from within the central EDR console. As an analyst, you may decide to isolate a complete endpoint, terminate a process, or quarantine some files. You can also connect to the host remotely and execute actions independently.
+- **Response**: EDR allows analysts to take action on detected threats from within the central console. Possible actions include isolating a complete endpoint, terminating a process, or quarantining files. The host can also be accessed remotely to execute actions independently.
 
-It is important to remember that an EDR is a host-only security solution and does not detect network-level threats.
+An EDR is a host-only security solution and does not detect network-level threats.
 
 ### Answers
 
@@ -48,33 +48,33 @@ It is important to remember that an EDR is a host-only security solution and doe
 
 ## Task 3 - Beyond the Antivirus
 
-Both AV and EDR have the same motive of protecting the endpoint they are installed on. However, they differ in the level of protection they provide.
+Both AV and EDR share the same motive of protecting the endpoint they are installed on. They differ in the level of protection they provide.
 
 ### Airport Analogy
 
-Think of an airport as an endpoint that needs protection. The immigration check (AV) monitors incoming people and matches their passports with a list of known criminals. If there is a match, the entry is blocked. But what happens if somebody who has never been identified as a criminal tries to come in? The immigration check will let them in. The airport has an undetected threat inside.
+Think of an airport as an endpoint that needs protection. The immigration check (AV) monitors incoming people and matches their passports against a list of known criminals. A match blocks the entry. But someone who has never been identified as a criminal gets let in, and the airport then has an undetected threat inside.
 
-An EDR would be the security officers stationed inside the airport. They constantly monitor the security cameras and motion sensors, watching for suspicious behaviour: roaming close to restricted areas, leaving bags unattended. Even if somebody manages to evade the immigration check, the security officers will constantly be monitoring their actions.
+An EDR is like the security officers stationed inside the airport. They constantly monitor the security cameras and motion sensors, watching for suspicious behaviour such as roaming close to restricted areas or leaving bags unattended. Even if someone manages to evade the immigration check, the security officers keep monitoring their actions.
 
 ### Scenario Breakdown
 
 A phishing email with a malicious Word document walks through the differences between AV and EDR:
 
-1. User receives a phishing email with a Word document embedded with a malicious macro (VBA script)
+1. The user receives a phishing email with a Word document embedded with a malicious macro (VBA script)
 2. The user downloads the document and opens it
-3. The malicious macro is silently executed, and it spawns PowerShell
-4. The malicious macro runs an obfuscated PowerShell command to download a sophisticated second-stage payload
+3. The malicious macro is silently executed and spawns PowerShell
+4. The macro runs an obfuscated PowerShell command to download a sophisticated second-stage payload
 5. The payload is injected into a legitimate svchost.exe
 6. The attacker gains remote access to the system
 
 | Attack Step | AV's Response | EDR's Response |
 |-------------|---------------|----------------|
 | Step #1 | Does nothing if the downloaded file has no previous signature in the database | Logs the file download activity and monitors it |
-| Step #2 | Does nothing upon the opening of the document since winword.exe is a legitimate utility | Records the execution of winword.exe and keeps monitoring |
-| Step #3 | Does nothing if the executed macro has no previous signature | Detects and flags the macro execution due to the unusual parent-child relationship of winword.exe and PowerShell.exe processes |
-| Step #4 | Typically, AVs will not detect obfuscated PowerShell scripts | Flags the obfuscated script execution |
-| Step #5 | Will not flag malicious injection into svchost.exe since it does not monitor the memory injections | Detects Process Injection in svchost.exe |
-| Step #6 | Lacks Network Level Visibility | Flags the unexpected behaviour of svchost.exe, making an outbound connection |
+| Step #2 | Does nothing when the document opens, since winword.exe is a legitimate utility | Records the execution of winword.exe and keeps monitoring |
+| Step #3 | Does nothing if the executed macro has no previous signature | Detects and flags the macro execution due to the unusual parent-child relationship of winword.exe and PowerShell.exe |
+| Step #4 | Typically will not detect obfuscated PowerShell scripts | Flags the obfuscated script execution |
+| Step #5 | Will not flag malicious injection into svchost.exe, since it does not monitor memory injections | Detects Process Injection in svchost.exe |
+| Step #6 | Lacks network-level visibility | Flags the unexpected behaviour of svchost.exe making an outbound connection |
 | Final Action | May be marked as clean | Generates an alert with the full attack chain and enables the analyst to take actions from within the EDR |
 
 ### Answers
@@ -89,19 +89,19 @@ A phishing email with a malicious Word document walks through the differences be
 
 ### Agents
 
-EDR agents (also known as sensors) are deployed inside the endpoints. They are the eyes and ears of the EDR. Their job is to sit at the endpoint and monitor all the activities. The information about these activities is sent in detail to the EDR central console in real time. The EDR agents can do some basic signature-based and behavior-based detections by themselves and send them to the EDR console, which triggers alerts.
+EDR agents (also known as sensors) are deployed inside the endpoints. They are the eyes and ears of the EDR. Their job is to sit at the endpoint and monitor all activity, sending detailed information about it to the EDR central console in real time. The agents can perform some basic signature-based and behavior-based detections on their own and send them to the console, which triggers alerts.
 
 ### EDR Console
 
-All the detailed data sent by the EDR agents is correlated and analyzed through complex logic and machine learning algorithms. The threat intelligence information is matched with the collected data. The EDR connects all the dots to form a detection, often called an alert. The console dashboard gives a holistic view of the current status of detections in all the endpoints.
+All the detailed data sent by the agents is correlated and analyzed through complex logic and machine learning algorithms. The threat intelligence information is matched against the collected data. The EDR connects all the dots to form a detection, often called an alert. The console dashboard gives a holistic view of the current status of detections across all endpoints.
 
 ### What happens after Detection?
 
-When a detection comes, it's a SOC analyst's responsibility to acknowledge the alert and prioritize it. The EDR gives severities to all the alerts (Critical, High, Medium, Low, Informational). The alert with the highest severity is investigated as a priority. Once the alert is clicked, the analyst can see all the details of the detection, including files executed, processes executed, network connection attempts, registry modifications, and much more. The analyst's job is to determine if the alert is a false positive or a true positive. In case of a true positive, the analyst can take actions from within the EDR console.
+When a detection comes in, it is a SOC analyst's responsibility to acknowledge the alert and prioritize it. The EDR assigns severities to all alerts (Critical, High, Medium, Low, Informational), and the highest-severity alert is investigated first. Clicking into an alert reveals all the details of the detection, including files executed, processes executed, network connection attempts, registry modifications, and much more. The analyst's job is to determine whether the alert is a false positive or a true positive. In the case of a true positive, actions can be taken from within the EDR console.
 
 ### EDR with Other Tools
 
-Although a standalone EDR provides enough information to detect and respond to threats in an endpoint, it works alongside other security solutions to form a larger security ecosystem. Within a network, you will see Firewalls, DLPs, Email Security Gateways, IAMs, EDRs, and other solutions protecting the different components. To minimize the effort and maximize the efficiency, all these security solutions are integrated with a SIEM solution that becomes the central point of investigation for the analysts.
+Although a standalone EDR provides enough information to detect and respond to threats on an endpoint, it works alongside other security solutions to form a larger security ecosystem. Within a network, Firewalls, DLPs, Email Security Gateways, IAMs, EDRs, and other solutions protect the different components. To minimize effort and maximize efficiency, all these solutions integrate with a SIEM, which becomes the central point of investigation for the analysts.
 
 ### Answers
 
@@ -112,21 +112,21 @@ Although a standalone EDR provides enough information to detect and respond to t
 
 ## Task 5 - EDR Telemetry
 
-EDR agents collect different data from their endpoints and push it to the EDR console. This data is known as Telemetry. Telemetry is the black box of an endpoint with everything necessary for detection and investigation.
+EDR agents collect different data from their endpoints and push it to the EDR console. This data is known as telemetry. Telemetry is the black box of an endpoint, holding everything necessary for detection and investigation.
 
 ### Collected Telemetry
 
-- **Process Executions and Terminations**: Keeps track of all running and idle processes, which helps identify suspicious child-parent process relationships, suspicious executables initiating a process, malware payload, etc.
+- **Process Executions and Terminations**: keeps track of all running and idle processes, which helps identify suspicious child-parent process relationships, suspicious executables initiating a process, malware payloads, and more.
 
-- **Network Connections**: All the endpoints' network connections are monitored, which helps identify any connection to a C2 server, unusual port usage, data exfiltration, or lateral movement within the network.
+- **Network Connections**: all the endpoints' network connections are monitored, which helps identify any connection to a C2 server, unusual port usage, data exfiltration, or lateral movement within the network.
 
-- **Command Line Activity**: Captures all commands executed on the endpoints in CMD, PowerShell, etc., which helps identify malicious command execution, obfuscated PowerShell script executions, which are often missed by a traditional antivirus.
+- **Command Line Activity**: captures all commands executed on the endpoints in CMD, PowerShell, and similar, which helps identify malicious command execution and obfuscated PowerShell scripts that a traditional antivirus often misses.
 
-- **Files and Folders Modifications**: Threat actors modify different files and folders during data staging, ransomware executions, and malicious file dropping. The EDR tracks this.
+- **Files and Folders Modifications**: threat actors modify different files and folders during data staging, ransomware execution, and malicious file dropping. The EDR tracks this.
 
-- **Registry Modifications**: The registry is a goldmine of information about the configurations in a Windows system. There are many registry modifications that occur during a malicious activity, and most of these are monitored by the EDR.
+- **Registry Modifications**: the registry is a goldmine of information about the configuration of a Windows system. Many registry modifications occur during malicious activity, and most of these are monitored by the EDR.
 
-EDR uses complex logic and machine learning algorithms to assess the activities. Advanced threats keep most of their activities stealthy, using legitimate utilities during execution. Individually, their activities may seem harmless, but when observed through detailed telemetry, they tell a different story. The analysts can understand the full chain of events, identify the root cause, and reconstruct the attack timeline.
+The EDR uses complex logic and machine learning algorithms to assess the activities. Advanced threats keep most of their activity stealthy, using legitimate utilities during execution. Individually, these activities may seem harmless, but through detailed telemetry they tell a different story. The analyst can understand the full chain of events, identify the root cause, and reconstruct the attack timeline.
 
 ### Answers
 
@@ -139,27 +139,27 @@ EDR uses complex logic and machine learning algorithms to assess the activities.
 
 ### Detection
 
-Based on the telemetry received from the endpoints, some advanced detection techniques are applied. These include:
+Based on the telemetry received from the endpoints, some advanced detection techniques are applied:
 
-- **Behavioral Detection**: Instead of just matching signatures with known threats, it observes the complete behavior of a file. Advanced threats craft their malware to look clean and use legitimate processes. EDR catches this behavior. For example, a process winword.exe spawning PowerShell.exe will be flagged due to the unusual parent-child relationship.
+- **Behavioral Detection**: instead of just matching signatures against known threats, it observes the complete behavior of a file. Advanced threats craft their malware to look clean and use legitimate processes, and EDR catches this behavior. For example, a winword.exe process spawning PowerShell.exe is flagged due to the unusual parent-child relationship.
 
-- **Anomaly Detection**: With time, EDR understands the baseline behavior of the endpoints. Any activity that deviates from this behavior will be flagged. Sometimes this can generate false positives as well, but with the full context it gives, the analyst can identify its legitimacy. For example, a process modifying an auto-start registry key which is not common behavior on the endpoint.
+- **Anomaly Detection**: over time, the EDR learns the baseline behavior of the endpoints. Any activity that deviates from this behavior is flagged. This can sometimes generate false positives, but with the full context provided, the analyst can judge its legitimacy. For example, a process modifying an auto-start registry key, which is not common behavior on the endpoint.
 
-- **IOC Matching**: EDRs have strong threat intelligence field integrations. Except for zero-day attacks, most of the attacks have indicators published in threat intelligence feeds. EDR flags any activity that matches any known IOC. For example, a user downloads a file that drops an executable, and the hash of this executable is matched with the threat intelligence feed and instantly flagged.
+- **IOC Matching**: EDRs have strong threat intelligence integrations. Except for zero-day attacks, most attacks have indicators published in threat intelligence feeds. EDR flags any activity that matches a known IOC. For example, a user downloads a file that drops an executable, and the hash of that executable matches the threat intelligence feed and is instantly flagged.
 
-- **MITRE ATT&CK Mapping**: Any activity flagged by the EDR is not only marked as malicious or suspicious but also mapped with the MITRE Tactic and Technique (attack stage). For example, the creation of a scheduled task will likely map to Tactic: Persistence, Technique: Scheduled Task/Job.
+- **MITRE ATT&CK Mapping**: any activity flagged by the EDR is not only marked as malicious or suspicious but also mapped to a MITRE Tactic and Technique (attack stage). For example, the creation of a scheduled task likely maps to Tactic: Persistence, Technique: Scheduled Task/Job.
 
-- **Machine Learning Algorithms**: Advanced threat actors try to evade defenses as much as possible. Modern EDRs have machine learning models trained by a large dataset of normal and malicious behaviors. This can detect complex patterns of an attack. Fileless attacks and multi-staged intrusions are often detected through this.
+- **Machine Learning Algorithms**: advanced threat actors try to evade defenses as much as possible. Modern EDRs have machine learning models trained on a large dataset of normal and malicious behaviors, which can detect complex attack patterns. Fileless attacks and multi-staged intrusions are often detected this way.
 
 ### Response
 
-EDR offers both automated and manual responses. You can make policies to block known malicious behaviors automatically. Manual response capabilities include:
+EDR offers both automated and manual responses. Policies can be made to block known malicious behaviors automatically. Manual response capabilities include:
 
-- **Isolate Host**: Isolate an endpoint from the network to contain malicious activity and prevent lateral movement
-- **Terminate Process**: Neutralize the malicious activity by terminating a specific process without full host isolation
-- **Quarantine**: Move a malicious file to an isolated location where it can not be executed
-- **Remote Access**: Remotely access the shell of any endpoint to gain deeper visibility or take custom actions, such as running scripts or collecting data
-- **Artefacts Collection**: Extract important artefacts from endpoints without physically accessing the device, including memory dumps, event logs, specific folder contents, and registry hives
+- **Isolate Host**: isolate an endpoint from the network to contain malicious activity and prevent lateral movement
+- **Terminate Process**: neutralize the malicious activity by terminating a specific process without full host isolation
+- **Quarantine**: move a malicious file to an isolated location where it cannot be executed
+- **Remote Access**: remotely access the shell of any endpoint to gain deeper visibility or take custom actions, such as running scripts or collecting data
+- **Artefacts Collection**: extract important artefacts from endpoints without physically accessing the device, including memory dumps, event logs, specific folder contents, and registry hives
 
 ### Answers
 
@@ -169,7 +169,7 @@ EDR offers both automated and manual responses. You can make policies to block k
 
 ## Task 7 - Investigate an alert on EDR
 
-You are a SOC analyst at TECH THM with access to the EDR console, having multiple medium and high-severity detections. Your task is to perform triage on each detection using the available information in the EDR and answer a series of questions related to these detections.
+The final task places the analyst at TECH THM with access to the EDR console, which holds multiple medium and high-severity detections. The goal is to triage each detection using the available information in the EDR and answer a series of questions.
 
 ### DESKTOP-HR01: Initial Access via Malicious Office Document
 
@@ -177,7 +177,7 @@ The process chain shows how a malicious Office document led to malware being dow
 
 <img src="images/edr-process-chain.png" width="65%">
 
-Clicking on INSTALL.EXE in the process chain reveals more details: the file was unsigned, flagged as "Known in malware campaigns" by Threat Intel, and quarantined by the EDR before it could be launched:
+Clicking on INSTALL.EXE in the process chain reveals more detail: the file was unsigned, flagged as "Known in malware campaigns" by Threat Intel, and quarantined by the EDR before it could be launched:
 
 <img src="images/edr-install-exe.png" width="65%">
 
@@ -189,7 +189,7 @@ On this machine, syncsvc.exe (located in haris.khan's Temp folder) accessed the 
 
 ### DESKTOP-DEV01: Execution from AppData Directory
 
-UpdateAgent.exe was launched from daniel.richards' AppData\Roaming folder. It initiated an outbound connection to an internal IP (10.10.20.5) on port 8080. Despite the suspicious location and behavior, Threat Intel labelled it as a known internal IT utility tool:
+UpdateAgent.exe was launched from daniel.richards' AppData\Roaming folder and initiated an outbound connection to an internal IP (10.10.20.5) on port 8080. Despite the suspicious location and behavior, Threat Intel labelled it as a known internal IT utility tool:
 
 <img src="images/edr-updateagent.png" width="65%">
 

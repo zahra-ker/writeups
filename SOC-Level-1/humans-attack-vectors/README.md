@@ -6,17 +6,17 @@
 
 ## Overview
 
-This room explores how attackers target the weakest link in cyber security: humans. It covers social engineering tactics (phishing, malware downloads, deepfakes, impersonation), mitigation strategies, and ends with two hands-on challenges where you investigate employee incidents and build a security policy.
+This room explores how attackers target the weakest link in cyber security: humans. It covers social engineering tactics (phishing, malware downloads, deepfakes, impersonation), mitigation strategies, and ends with two hands-on challenges: investigating employee incidents and building a security policy.
 
 ## Task 1 - Introduction
 
-The SOC doesn't just deal with technical threats, it also protects against attacks that target humans. This room dives into the methods of modern attackers and how they exploit human psychology.
+The SOC does not just deal with technical threats, it also protects against attacks that target humans. This room looks at the methods of modern attackers and how they exploit human psychology.
 
 Learning objectives:
 
 - Learn the role of the human element in cyber security
 - Understand the SOC role in detecting and mitigating attacks
-- Practice the acquired knowledge in two realistic scenarios
+- Practice the knowledge in two realistic scenarios
 
 ## Task 2 - The Human Element
 
@@ -42,16 +42,16 @@ Humans are targeted because of the **access** they can provide: websites, mailbo
 
 Attacks targeting humans rely on **social engineering**, manipulating the victim into helping the attacker, whether knowingly or not. For the tactic to succeed, it must be:
 
-- **Trustworthy**: The attacker must appear legitimate so the victim trusts them
-- **Emotional**: The attack must trigger feelings like urgency, fear, or curiosity
+- **Trustworthy**: the attacker must appear legitimate so the victim trusts them
+- **Emotional**: the attack must trigger feelings like urgency, fear, or curiosity
 
 ### Phishing Attacks
 
-The most common form of social engineering, with an estimated 3.4 billion malicious emails sent daily. Examples include fake login pages (e.g., a fake 1Password security alert) and emails with malware attachments (e.g., a fake tax penalty notice with a malicious .zip file).
+The most common form of social engineering, with an estimated 3.4 billion malicious emails sent daily. Examples include fake login pages (such as a fake 1Password security alert) and emails with malware attachments (such as a fake tax penalty notice carrying a malicious .zip file).
 
 ### Malware Downloads
 
-Threat actors trick users into downloading malware through fake websites (e.g., a fake Firefox update page that downloads a data stealer), malicious QR codes, fake CAPTCHAs that trick users into running commands, and SEO poisoning.
+Threat actors trick users into downloading malware through fake websites (such as a fake Firefox update page that downloads a data stealer), malicious QR codes, fake CAPTCHAs that trick users into running commands, and SEO poisoning.
 
 ### Deepfakes
 
@@ -59,7 +59,7 @@ AI-generated video or audio used to impersonate family members, colleagues, or c
 
 ### Impersonation
 
-Pretending to be someone else. Many ransomware attacks started with attackers impersonating a corporate IT department and asking victims to take over their accounts for a "system repair."
+Pretending to be someone else. Many ransomware attacks started with attackers impersonating a corporate IT department and asking victims to hand over their accounts for a "system repair."
 
 ### Other Attacks
 
@@ -74,14 +74,14 @@ USB drop campaigns, physical attacks, insider threats, and fake job offers are a
 
 ## Task 4 - Defending Humans
 
-Defending against threats involves two key tasks: **Mitigation** and **Detection**. Mitigation aims to prevent or reduce the chance and impact of attacks. However, no matter how good mitigation measures are, they will eventually be bypassed. That's where SOC skills are vital.
+Defending against these threats involves two key tasks: **Mitigation** and **Detection**. Mitigation aims to prevent or reduce the chance and impact of attacks. No matter how good the mitigation measures are, they will eventually be bypassed, and that is where SOC skills become vital.
 
 | Mitigation | Description |
 |-----------|-------------|
 | Anti-phishing solution | Blocks phishing emails before users even notice |
 | Antivirus / EDR solution | Prevents humans from running malware on corporate hosts |
-| "Trust but verify" principle | Instruct employees to detect deepfakes and verify suspicious requests |
-| Security awareness training | Teach employees to detect phishing through simulations |
+| "Trust but verify" principle | Instructs employees to detect deepfakes and verify suspicious requests |
+| Security awareness training | Teaches employees to detect phishing through simulations |
 
 ### Answers
 
@@ -92,31 +92,32 @@ Defending against threats involves two key tasks: **Mitigation** and **Detection
 
 ## Task 5 - Practice
 
-In this lab, you play as a SOC analyst at TryHackMe. The security dashboard has two challenges: **Employees at Risk** and **Security Policy**.
+The lab casts the player as a SOC analyst at TryHackMe. The security dashboard has two challenges: **Employees at Risk** and **Security Policy**.
 
 ### Employees at Risk
 
-You review four cases on the dashboard and choose the correct response:
+Four cases on the dashboard each call for the correct response:
 
-1. **Lucas Martinez** (Software Engineer): Downloaded "Setup.exe" from `best-freeapps-2025.top` trying to install 7-Zip. Tried to launch it 6 times, blocked by antivirus. **Verdict**: Quarantine the Setup.exe and instruct Lucas to use the official 7-Zip installer.
+1. **Lucas Martinez** (Software Engineer): downloaded "Setup.exe" from `best-freeapps-2025.top` while trying to install 7-Zip. The file was launched 6 times and blocked each time by antivirus. **Verdict**: quarantine the Setup.exe and instruct Lucas to use the official 7-Zip installer.
 
-2. **Suspicious Email Attachment**: SIEM alert for an email from `noreply@stripe-payments.xyz` to the Finance Director with an attached `Invoice.rar` (password-protected). **Verdict**: Block the email and start the analysis. This is a phishing attempt.
+2. **Suspicious Email Attachment**: a SIEM alert for an email from `noreply@stripe-payments.xyz` to the Finance Director with an attached `Invoice.rar` (password-protected). **Verdict**: block the email and start the analysis. This is a phishing attempt.
 
-3. **Isabella (IT Support)**: Received a phone call at 9 PM from a hidden number claiming to be the CEO, asking to reset Ben's Gmail password. Ben doesn't respond to messages. **Verdict**: Disable Ben's Gmail account until he confirms the login or is back in the office.
+3. **Isabella** (IT Support): received a phone call at 9 PM from a hidden number claiming to be the CEO, asking to reset Ben's Gmail password. Ben does not respond to messages. **Verdict**: disable Ben's Gmail account until he confirms the login or is back in the office.
 
-4. **Anomalous Login**: Rose Lewis (HR Assistant) logged into Microsoft 365 from London instead of her usual Oxford location. Visited suspicious URLs including `login[.]micrsoft365-online[.]ru`. **Verdict**: Disable Rose Lewis's account until you are more confident in your verdict.
+4. **Anomalous Login**: Rose Lewis (HR Assistant) logged into Microsoft 365 from London instead of her usual Oxford location, and visited suspicious URLs including `login[.]micrsoft365-online[.]ru`. **Verdict**: disable Rose Lewis's account until the verdict is more certain.
 
 ### Security Policy
 
-You need to select the four most effective security policies for the organization:
+This challenge requires selecting the four most effective security policies for the organization:
 
 <img src="images/security-policy.png" width="65%">
 
 The correct policies are:
-1. **Access Management Policy**: Document how IT support should verify requests like password resets
-2. **Security Awareness Program**: Setup quarterly trainings on detecting phishing
-3. **Antivirus Solution**: Install antivirus on all workstations
-4. **Anti-Phishing Solution**: Deploy a solution to block phishing emails
+
+1. **Access Management Policy**: document how IT support should verify requests like password resets
+2. **Security Awareness Program**: set up quarterly trainings on detecting phishing
+3. **Antivirus Solution**: install antivirus on all workstations
+4. **Anti-Phishing Solution**: deploy a solution to block phishing emails
 
 ### Answers
 

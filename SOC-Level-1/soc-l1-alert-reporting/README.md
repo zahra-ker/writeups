@@ -6,11 +6,11 @@
 
 ## Overview
 
-This room builds on alert triage by introducing three essential SOC skills: alert reporting, escalation, and communication. You learn how to write structured alert reports using the Five Ws approach, when and how to escalate alerts to L2 analysts, and how to handle crisis communication scenarios. The room includes hands-on practice on the SOC dashboard where you investigate new alerts, write reports, and escalate them.
+This room builds on alert triage by introducing three essential SOC skills: alert reporting, escalation, and communication. It covers how to write structured alert reports using the Five Ws approach, when and how to escalate alerts to L2 analysts, and how to handle crisis communication scenarios. The room includes hands-on practice on the SOC dashboard: investigating new alerts, writing reports, and escalating them.
 
 ## Task 1 - Introduction
 
-After triaging alerts, L1 analysts may be uncertain about how to classify them, requiring senior support or information from the system owner. L1 analysts also deal with real cyberattacks and breaches that need immediate attention and remediation actions. This room covers these cases by introducing three new terms: alert reporting, escalation, and communication.
+After triaging alerts, L1 analysts may be uncertain about how to classify them and need senior support or information from the system owner. L1 analysts also deal with real cyberattacks and breaches that need immediate attention and remediation. This room covers these cases through three new terms: alert reporting, escalation, and communication.
 
 Learning objectives:
 
@@ -18,27 +18,27 @@ Learning objectives:
 - Learn how to write alert comments or case reports properly
 - Explore escalation methods and communication best practices
 - Apply the knowledge to triage alerts in a simulated environment
-- Feel more confident in SOC Simulator and during SAL1 certification
+- Build confidence for the SOC Simulator and SAL1 certification
 
 ## Task 2 - Alert Funnel
 
-In the previous room, you learned how to classify and triage alerts. The next step is understanding what happens after triage: how does your work prevent threats and stop breaches?
+The previous room covered how to classify and triage alerts. The next step is understanding what happens after triage: how does this work prevent threats and stop breaches?
 
 L1 analysts receive alerts in a SIEM, EDR, or ticket management platform. Most alerts are closed as False Positives or handled at L1 level, but complex and threatening ones are sent to L2. Out of 100 SIEM alerts, roughly 10 make it through as True Positives to L2, and from those, maybe 1 becomes an incident handled by the DFIR team. The ultimate goal is to protect corporate data.
 
-To send alerts further, you need three skills:
+Sending alerts further requires three skills.
 
 ### Alert Reporting
 
-Before closing or passing an alert to L2, you might have to report it. Depending on team standards and alert severity, you can be required to document your investigation in detail, ensuring all relevant evidence is included. This is especially important for True Positives, which require escalation.
+Before closing or passing an alert to L2, it may need to be reported. Depending on team standards and alert severity, the investigation may have to be documented in detail, ensuring all relevant evidence is included. This is especially important for True Positives, which require escalation.
 
 ### Alert Escalation
 
-If the True Positive alert requires additional actions or deeper investigation, escalate it to the L2 analyst for further review following the agreed procedures. Your alert report comes in handy since L2 will use it to get the initial context and spend less time on the analysis from scratch.
+If a True Positive alert requires additional actions or deeper investigation, it is escalated to the L2 analyst for further review following the agreed procedures. The alert report comes in handy here, since L2 uses it to get the initial context and spend less time analysing from scratch.
 
 ### Communication
 
-You may also need to communicate with other departments during or after the analysis. For example, ask the IT team if they confirm granting administrative privileges to some users or contact HR to get more information about a newly hired employee.
+Communication with other departments is often needed during or after the analysis. For example, asking the IT team to confirm administrative privileges granted to some users, or contacting HR for more information about a newly hired employee.
 
 ### Answers
 
@@ -49,23 +49,23 @@ You may also need to communicate with other departments during or after the anal
 
 ## Task 3 - Reporting Guide
 
-Having L1 analysts write alert reports in addition to marking them as True or False Positives is essential. Alert reports serve several key purposes:
+Having L1 analysts write alert reports in addition to marking alerts as True or False Positives is essential. Alert reports serve several key purposes:
 
 | Alert Report Purpose | Explanation |
 |---------------------|-------------|
 | Provide context for escalation | A well-written report saves lots of time for L2 analysts and helps them quickly understand what happened |
-| Save findings for the records | Raw SIEM logs are stored for 3-12 months, but alerts are kept indefinitely. It's better to keep all the context inside the alert, just in case |
-| Improve investigation skills | If you can't explain it simply, you don't understand it well enough. Report writing is a great way to boost L1 skills by summarising alerts |
+| Save findings for the records | Raw SIEM logs are stored for 3-12 months, but alerts are kept indefinitely. Keeping all the context inside the alert is safer, just in case |
+| Improve investigation skills | If something cannot be explained simply, it is not understood well enough. Report writing is a great way to boost L1 skills by summarising alerts |
 
 ### Report Format
 
-Imagine yourself as an L2 analyst, a DFIR team member, or an IT professional who needs to understand the alert. Follow the **Five Ws** approach and include at least these items in the report:
+A good report is written for an L2 analyst, a DFIR team member, or an IT professional who needs to understand the alert. The **Five Ws** approach covers at least these items:
 
-- **Who**: Which user logs in, runs the command, or downloads the file
-- **What**: What exact action or event sequence was performed
-- **When**: When exactly did the suspicious activity start and end
-- **Where**: Which device, IP, or website was involved in the alert
-- **Why**: The most important W, the reasoning for your final verdict
+- **Who**: which user logs in, runs the command, or downloads the file
+- **What**: the exact action or event sequence performed
+- **When**: when exactly the suspicious activity started and ended
+- **Where**: which device, IP, or website was involved in the alert
+- **Why**: the most important W, the reasoning behind the final verdict
 
 On the SOC dashboard, the "Sensitive Document Share to External" alert reveals that m.boslan@tryhackme.thm shared an internal HR spreadsheet ("Employee Records (Updated)") to an external Protonmail address. The DLP solution had already blocked an attempt to download the whole HR folder:
 
@@ -75,7 +75,7 @@ A new "Email Marked as Phishing after Delivery" alert also appears, showing an e
 
 <img src="images/phishing-email-alert.png" width="65%">
 
-After investigating the phishing alert and writing a proper report using the Five Ws template, you receive the flag.
+Investigating the phishing alert and writing a proper report using the Five Ws template reveals the flag.
 
 ### Answers
 
@@ -87,35 +87,35 @@ After investigating the phishing alert and writing a proper report using the Fiv
 
 ## Task 4 - Escalation Guide
 
-After making a verdict and writing your alert report, you must choose whether to escalate the alert to L2. You should escalate when:
+After making a verdict and writing the alert report, the next decision is whether to escalate the alert to L2. Escalation is appropriate when:
 
 1. The alert is an indicator of a major cyberattack requiring deeper investigation or DFIR
 2. Remediation actions like malware removal, host isolation, or password reset are required
-3. Communication with customers, partners, management, or law enforcement agencies is required
-4. You just do not fully understand the alert and need some help from more senior analysts
+3. Communication with customers, partners, management, or law enforcement is required
+4. The alert is simply not fully understood and needs help from more senior analysts
 
 ### Escalation Steps
 
-To escalate an alert, reassign it to the L2 on shift and ping them in corporate chat or in person. In some teams, you may be required to create a formal written escalation request with dozens of required fields.
+To escalate an alert, reassign it to the L2 on shift and ping them in corporate chat or in person. Some teams also require a formal written escalation request with dozens of required fields.
 
 ### Requesting L2 Support
 
-It is generally fine for L1 to request senior support if something is unclear. Especially in your first months, it's always better to discuss the alert and clarify SOC procedures than to blindly close the alert you don't understand yourself.
+It is generally fine for L1 to request senior support when something is unclear. Especially in the first months, it is always better to discuss the alert and clarify SOC procedures than to blindly close an alert that is not understood.
 
 ### SOC Dashboard Escalation
 
 On the dashboard, the escalation workflow is:
 
 1. Move the alert to **In Progress** status and do the analysis
-2. Write an alert report and set your **verdict**, such as True Positive
-3. If escalation is required, assign the alert **to your L2** on shift
-4. L2 will receive a notification and start from your alert report
+2. Write an alert report and set the **verdict**, such as True Positive
+3. If escalation is required, assign the alert **to the L2** on shift
+4. L2 receives a notification and starts from the alert report
 
 The assignee dropdown shows the available team members, with E.Fleming as the L2 analyst on shift:
 
 <img src="images/assignee-dropdown.png" width="65%">
 
-After correctly escalating both new alerts to L2, the dashboard shows all alerts have been processed:
+After both new alerts are correctly escalated to L2, the dashboard shows all alerts processed:
 
 <img src="images/dashboard-escalated.png" width="65%">
 
@@ -129,19 +129,19 @@ After correctly escalating both new alerts to L2, the dashboard shows all alerts
 
 ## Task 5 - SOC Communication
 
-The escalation and reporting topics should sound straightforward. But you should be prepared for unexpected scenarios and know what to do in critical cases. The SOC team has its own **Crisis Communication** procedures, with guides and processes to help you and your teammates resolve issues.
+Escalation and reporting are straightforward in most cases, but unexpected and critical situations also come up. The SOC team has its own **Crisis Communication** procedures, with guides and processes to help the whole team resolve issues.
 
 ### Communication Cases
 
-- **L2 is unavailable for 30 minutes during a critical alert**: First try to call L2, then L3, and finally your manager. Ensure you know where to find emergency contacts.
-- **Account compromise requires validating the login with the affected user**: Do not contact the user through the breached chat. Use alternative contact methods like a phone call.
-- **Overwhelming number of alerts, some critical**: Prioritise alerts according to the workflow, but inform your L2 on shift about the situation.
-- **You misclassified an alert and likely missed a malicious action**: Immediately reach out to your L2 explaining your concerns. Threat actors can be silent for weeks before impact.
-- **SIEM logs are not parsed correctly or not searchable**: Do not skip the alert. Investigate what you can and report the issue to your L2 on shift or SOC engineer.
+- **L2 is unavailable for 30 minutes during a critical alert**: first try to call L2, then L3, and finally the manager. Knowing where to find emergency contacts is essential.
+- **Account compromise requires validating the login with the affected user**: do not contact the user through the breached chat. Use an alternative method like a phone call.
+- **Overwhelming number of alerts, some critical**: prioritise alerts according to the workflow, but inform the L2 on shift about the situation.
+- **An alert was misclassified and a malicious action was likely missed**: immediately reach out to L2 with the concern. Threat actors can stay silent for weeks before impact.
+- **SIEM logs are not parsed correctly or not searchable**: do not skip the alert. Investigate what is possible and report the issue to the L2 on shift or a SOC engineer.
 
 ### Communication By L2
 
-No matter what the agreements are, L2 will eventually receive the ticket from you, read your report, and contact you in case of any questions. Once everything is clear, the L2 analyst will typically research the alert details further, validate if the alert is indeed a True Positive, communicate with other departments if needed, and for major incidents, start a formal Incident Response process.
+No matter what the agreements are, L2 eventually receives the ticket, reads the report, and reaches back out with any questions. Once everything is clear, the L2 analyst typically researches the alert details further, validates whether the alert is indeed a True Positive, communicates with other departments if needed, and for major incidents, starts a formal Incident Response process.
 
 ### Answers
 

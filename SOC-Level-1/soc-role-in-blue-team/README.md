@@ -6,7 +6,7 @@
 
 ## Overview
 
-This room dives deeper into the Blue Team's place within a company's security structure. It covers the security hierarchy, the different departments (SOC, CIRT, specialized roles), career progression for a SOC L1 analyst, and ends with a drag-and-drop challenge where you assign the right people to security incidents.
+This room goes deeper into the Blue Team's place within a company's security structure. It covers the security hierarchy, the different departments (SOC, CIRT, specialized roles), career progression for a SOC L1 analyst, and ends with a drag-and-drop challenge that assigns the right people to security incidents.
 
 ## Task 1 - Introduction
 
@@ -14,24 +14,24 @@ A brief introduction building on the Junior Security Analyst Intro room. The lea
 
 - Understand the concept and purpose of the Blue Team
 - Explore the SOC's place within a company structure
-- Find out about your career path as a SOC L1 analyst
+- Learn about the career path of a SOC L1 analyst
 
 ## Task 2 - Security Hierarchy
 
-Every company has a unique security structure. At a high level, the hierarchy looks like:
+Every company has a unique security structure. At a high level, the hierarchy looks like this:
 
-1. **Executives** (CEO / CFO / Company owner) - Focus on global business objectives
-2. **Security Leadership** (CTO / CIO / CISO) - Lead company-wide IT or security programs
-3. **Security Managers** (Team Lead / SOC Manager) - Manage a single team or department like SOC
-4. **Technical** (Analyst / Engineer / Red Teamer) - Perform technical tasks like log analysis
+1. **Executives** (CEO / CFO / Company owner): focus on global business objectives
+2. **Security Leadership** (CTO / CIO / CISO): lead company-wide IT or security programs
+3. **Security Managers** (Team Lead / SOC Manager): manage a single team or department like the SOC
+4. **Technical** (Analyst / Engineer / Red Teamer): perform technical tasks like log analysis
 
-Top executives focus on business objectives and don't manage technical aspects, which is why they hire a **CISO** (Chief Information Security Officer) to create the most suitable security departments.
+Top executives focus on business objectives and do not manage technical aspects, which is why they hire a **CISO** (Chief Information Security Officer) to create the most suitable security departments.
 
 In bigger companies, the CISO oversees multiple security teams:
 
-- **Red Team**: Offensive security experts, pentesters, or ethical hackers who look for security issues
-- **GRC Team**: Specialists managing policies and ensuring compliance with regulations like PCI DSS
-- **Blue Team**: Defensive security experts like SOC analysts, engineers, or incident responders
+- **Red Team**: offensive security experts, pentesters, or ethical hackers who look for security issues
+- **GRC Team**: specialists managing policies and ensuring compliance with regulations like PCI DSS
+- **Blue Team**: defensive security experts like SOC analysts, engineers, or incident responders
 
 ### Answers
 
@@ -42,20 +42,20 @@ In bigger companies, the CISO oversees multiple security teams:
 
 ## Task 3 - Meet the Blue Team
 
-Blue Team focuses on defensive security, constantly monitoring for attacks and responding quickly. It can include 3 to 50 members depending on the company. The most common Blue Team departments are:
+The Blue Team focuses on defensive security, constantly monitoring for attacks and responding quickly. It can include 3 to 50 members depending on the company. The most common Blue Team departments are the following.
 
 ### Security Operations Center (SOC)
 
-The SOC is the first line of defense. It operates 24/7, creates detection rules, investigates security alerts, collects and monitors logs, cooperates with the IT team, and writes summary reports. Roles include:
+The SOC is the first line of defense. It operates 24/7, creates detection rules, investigates security alerts, collects and monitors logs, cooperates with the IT team, and writes summary reports. Its roles include:
 
-- **L1 Analysts**: Junior members who triage alerts and pass complex cases to L2
-- **L2 Analysts**: Experienced members who investigate more advanced attacks
-- **Engineers**: Experts in configuring security tools like EDR or SIEM
-- **Manager**: Manages the whole SOC team
+- **L1 Analysts**: junior members who triage alerts and pass complex cases to L2
+- **L2 Analysts**: experienced members who investigate more advanced attacks
+- **Engineers**: experts in configuring security tools like EDR or SIEM
+- **Manager**: manages the whole SOC team
 
 ### Cyber Incident Response Team (CIRT)
 
-Also called CSIRT or CERT, these are the "cyber firefighters" called on-demand when an incident goes out of control. They support the SOC with analysis, handle critical incidents, identify hidden threats, perform deep forensics, and recover breached systems. Roles include CSIRT Manager, Forensics Lead, Threat Intel Expert, Threat Hunting Expert, and Malware Analyst.
+Also called CSIRT or CERT, these are the "cyber firefighters" called on demand when an incident goes out of control. They support the SOC with analysis, handle critical incidents, identify hidden threats, perform deep forensics, and recover breached systems. Roles include CSIRT Manager, Forensics Lead, Threat Intel Expert, Threat Hunting Expert, and Malware Analyst.
 
 Real-world CIRT examples: JPCERT (Japan), Mandiant, AWS CIRT.
 
@@ -63,10 +63,10 @@ Real-world CIRT examples: JPCERT (Japan), Mandiant, AWS CIRT.
 
 Large companies may require narrow, specialized Blue Team roles:
 
-- **Digital Forensics Analyst**: Uncover hidden threats in disk and memory
-- **Threat Intelligence Analyst**: Gather data about emerging threat groups
-- **AppSec Engineer**: Maintain a secure software development lifecycle
-- **AI Researcher**: Study AI threats and how to defend against them
+- **Digital Forensics Analyst**: uncovers hidden threats in disk and memory
+- **Threat Intelligence Analyst**: gathers data about emerging threat groups
+- **AppSec Engineer**: maintains a secure software development lifecycle
+- **AI Researcher**: studies AI threats and how to defend against them
 
 ### Answers
 
@@ -77,12 +77,12 @@ Large companies may require narrow, specialized Blue Team roles:
 
 ## Task 4 - Advancing SOC Career
 
-Starting as a SOC L1 analyst is a great way to broaden your cyber awareness. Steps to get started:
+Starting as a SOC L1 analyst is a great way to broaden cyber awareness. The steps to get started are:
 
 1. Gain core SOC skills and practice them (red teaming or general IT helps too)
-2. Be proactive: try CTFs, stay in the loop of cyber news, consider the SAL1 certification
+2. Stay proactive: try CTFs, keep up with cyber news, consider the SAL1 certification
 3. Prepare for interviews, learn the difference between internal SOC and MSSP, and apply
-4. After working in a junior position, consider preparing and advancing to more senior roles
+4. After time in a junior position, prepare and advance to more senior roles
 
 ### Internal SOC vs MSSP
 
@@ -91,9 +91,9 @@ Starting as a SOC L1 analyst is a great way to broaden your cyber awareness. Ste
 | Scenario Example | SOC team of a bank protecting the bank's systems | Global MSSP protecting sixty customers in Europe |
 | Working Pace | Calm shifts without too much time pressure | Shift starts from a queue of urgent alerts |
 | Security Tools | Few tools, but need to know them very well | Sixty diverse security tools and platforms |
-| Incident Practice | Two major cyber attacks last year | Every week, deal with attacks and breaches |
+| Incident Practice | Two major cyber attacks last year | Attacks and breaches to deal with every week |
 
-The natural next step after L1 is to become a **SOC L2 Analyst**, though you can also branch into engineering, incident response, or management.
+The natural next step after L1 is to become a **SOC L2 Analyst**, though branching into engineering, incident response, or management is also possible.
 
 ### Answers
 
@@ -104,7 +104,7 @@ The natural next step after L1 is to become a **SOC L2 Analyst**, though you can
 
 ## Task 5 - Final Challenge
 
-In this challenge, you play as the CISO of TrySecureMe, a big multinational company. Seven incidents are happening at once, and you need to drag and drop the right roles to handle each one.
+The final challenge casts the player as the CISO of TrySecureMe, a big multinational company. Seven incidents happen at once, and the right roles must be dragged and dropped to handle each one.
 
 The correct assignments are:
 
