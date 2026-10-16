@@ -17,3 +17,4 @@ Writeups for the [SOC Level 1](https://tryhackme.com/path/outline/soclevel1) lea
 | 9 | Introduction to EDRs | Easy | [Link](introduction-to-edrs/) |
 | 10 | Introduction to SIEM | Easy | [Link](introduction-to-siem/) |
 | 11 | Splunk: Basics | Easy | [Link](splunk-basics/) |
+| 12 | Investigating with ELK 101 | Easy | [Link](investigating-with-elk-101/) |
